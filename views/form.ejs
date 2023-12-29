@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Form</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    #first {
+        background-color: rgb(13, 84, 102);
+        border-radius: 10px;
+        padding: 20px; 
+        margin: auto; 
+        max-width: 500px; 
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+    }
+    h1 {
+        color: white;
+        text-align: center;
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    label {
+        color: white;
+    }
+    .form-control {
+        border-radius: 5px; 
+    }
+    .btn {
+        width: 100%; 
+        margin-top: 10px;
+    }
+    .btn-warning {
+        margin-top: 0; 
+    }
+    .text-white {
+        margin-top: 5px; 
+    }
+  </style>
+</head>
+
+<body>
+    <div class="container mt-5 p-5" id="first">
+        <h1>Registration Form</h1>
+        <form action="/submit" method="post" onsubmit="return button1()">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+                <p id="forname" class="text-white"></p>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your phone number">
+                <p id="forno" class="text-white"></p>
+            </div>
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" class="form-control" name="age" id="age" placeholder="Enter your age">
+                <p id="forage" class="text-white"></p>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
+                <p id="formail" class="text-white"></p>
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+        </form>
+        <form action="/homemy"><button type="submit" class="btn btn-warning">Home</button></form>
+    </div>
+
+          <script>
+
+            function button1(){
+                let name1 = document.getElementById('name').value
+                let namevalue = document.getElementById('forname')
+                let phone1 = document.getElementById('phone').value
+                let phonevalue = document.getElementById('forno')
+                let age1 = document.getElementById('age').value
+                let agevalue = document.getElementById('forage')
+                let mail1 = document.getElementById('email').value
+                let mailvalue = document.getElementById('formail')
+
+            if(name1===''){
+                namevalue.innerHTML="Enter a Name*"
+                return false
+            }else{
+                namevalue.innerHTML=''
+            }
+            if(phone1===''){
+                phonevalue.innerHTML="Enter a Number*"
+                return false
+            }else{
+                phonevalue.innerHTML=''
+            }
+            if(age1===""){
+                agevalue.innerHTML="Enter Age*"
+                return false
+            }else{
+                agevalue.innerHTML=''
+            }
+            if(mail1==''){
+                mailvalue.innerHTML="Enter a Email*"
+                return false
+            }else{
+                mailvalue.innerHTML=''
+            }
+            return true;
+            }
+         
+
+
+          </script>
+          
+
